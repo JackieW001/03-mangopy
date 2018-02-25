@@ -5,6 +5,12 @@ connection = pymongo.MongoClient("homer.stuy.edu")
 db = connection['test']
 collection = db['restaurants']
 
+def print_collection():
+    c = collection.find()
+    for i in c:
+        print i
+        print ""
+        
 def borough_search( b ):
     
     c = collection.find({'borough': b})
