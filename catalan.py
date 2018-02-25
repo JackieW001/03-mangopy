@@ -60,7 +60,7 @@ def updateDB(event_list):
         print "added successfully"
 
 #print el
-updateDB(el)
+#updateDB(el)
 
 
 
@@ -68,31 +68,37 @@ updateDB(el)
 #Adding to Database
 #collection.insert_many(el)
 
-'''
+
 #Searching by date
 def date(d):
-    c = collection.find({'event.date':d})
+    c = db.collection.find({'date': d})
     for i in c:
         print i
+
+print "----- Seaching by Date ----"
 date('-300')
 
 
 def desc(d):
-    c = collection.find({'event.description':d})
+    c = db.collection.find({'description':d})
     for i in c:
         print i
-desc('Auge de Mero')
 
+print "---- Searching by Description ---"
+desc('Auge de Meroe')
+
+'''
+# Not that useful
 
 def gran(g):
-    c = collection.find({'event.granularity':g})
+    c = db.collection.find({'granularity':g})
     for i in c:
         print i
 gran('year')
 
 
 def lang(l):
-    c = collection.find({'event.lang':l})
+    c = db.collection.find({'lang':l})
     for i in c:
         print i
 lang('ca')
